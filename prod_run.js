@@ -60,9 +60,9 @@ var tags_es = page.evaluate(function() {
   //console.log(JSON.stringify(post_to_es, undefined, 4));
 
 post_page = require('webpage').create();
-post_page.customHeaders={'Authorization': 'Basic '+btoa('ankitkumar:-------PASSWORD-----')};
+post_page.customHeaders={'Authorization': 'Basic '+btoa('$USERNAME:$PASSWORD')};
 
-post_page.open('https://5905c5406e74ece67998e7fc16503962.us-east-1.aws.found.io:9243/scraped_atlas_data/technology/', 'post', JSON.stringify(post_to_es), function(status){
+post_page.open('$YOUR-ELASTIC-SEARCH-URL', 'post', JSON.stringify(post_to_es), function(status){
 	console.log("-------------------------------------POSTED TO ELASTIC SEARCH -----------------------------");
 	//console.log('content: '+ content);
 	console.log('status: '+ status);
